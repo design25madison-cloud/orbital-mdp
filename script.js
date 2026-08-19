@@ -176,7 +176,19 @@ function showOnboardingPanel(step) {
   }
 }
 
+function resetScroll() {
+  window.scrollTo(0, 0);
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
+  document.querySelectorAll(".onboarding-main, .experience-body, .dashboard-main").forEach((el) => {
+    el.scrollTop = 0;
+  });
+}
+
 function goToStep(step) {
+  resetScroll();
+  requestAnimationFrame(resetScroll);
+
   if (step === "overview") {
     document.querySelectorAll(".screen").forEach((screen) => {
       const isActive = screen.dataset.step === "overview";
@@ -187,7 +199,6 @@ function goToStep(step) {
     document.body.classList.remove("is-loading");
     if (currentStep === "loading") stopLoadingOrbit();
     currentStep = "overview";
-    window.scrollTo(0, 0);
     renderOverviewScreen();
     return;
   }
@@ -977,6 +988,8 @@ function bindAddPersonaScreen() {
     onboardingState.personaFormOrigin = onboardingState.personaFormOrigin === "5.3" ? "5.3" : "5.1";
     onboardingState.currentPersonaIndex = onboardingState.personas.length;
     fillPersonaForm(PERSONA_DRAFTS[onboardingState.currentPersonaIndex]);
+    resetScroll();
+    requestAnimationFrame(resetScroll);
   });
 
   form.addEventListener("submit", (event) => {

@@ -112,6 +112,7 @@ body {
   min-height: 100%;
   background: var(--bg-primary);
   color: var(--text-primary);
+  overflow-x: clip;
 }
 
 body {
@@ -176,17 +177,23 @@ img {
   display: flex;
   align-items: stretch;
   min-height: 100vh;
-  min-height: 960px;
+  min-height: 100dvh;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
   background: var(--bg-primary);
 }
 
 .auth-form-section {
   display: flex;
-  flex: 1 0 0;
+  flex: 1 1 50%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-width: 480px;
+  min-width: 0;
+  min-height: 0;
+  overflow: auto;
+  padding: 24px 0;
 }
 
 .auth-form-container {
@@ -572,35 +579,46 @@ img {
 .auth-hero-section {
   display: flex;
   align-items: stretch;
-  flex-shrink: 0;
-  min-width: 640px;
+  flex: 1 1 48%;
+  min-width: 0;
+  min-height: 0;
+  max-width: 52%;
   padding: var(--space-3xl) var(--space-3xl) var(--space-3xl) 0;
-  gap: var(--space-md);
+  overflow: hidden;
 }
 
 .hero-visual {
+  width: 100%;
   height: 100%;
-  width: auto;
-  max-width: none;
-  aspect-ratio: 848 / 1056;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: cover;
+  object-position: center;
   border-radius: var(--radius-hero);
 }
 
 .onboarding-layout {
   display: flex;
-  align-items: stretch;
+  align-items: flex-start;
   min-height: 100vh;
   background: var(--bg-primary);
 }
 
 .onboarding-sidebar {
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  z-index: 2;
   display: flex;
-  flex: 1 0 0;
+  flex: 0 0 384px;
   flex-direction: column;
   justify-content: space-between;
+  width: 384px;
   max-width: 384px;
-  min-width: 280px;
+  min-width: 0;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
   background: #041229;
   /* background:
     radial-gradient(
@@ -768,10 +786,11 @@ img {
 
 .onboarding-main {
   display: flex;
-  flex: 1 0 0;
+  flex: 1 1 auto;
   flex-direction: column;
   align-items: center;
-  min-width: 480px;
+  min-width: 0;
+  min-height: 100vh;
   padding: 160px var(--container-padding) 96px;
 }
 
@@ -1844,6 +1863,13 @@ img {
   width: 100%;
 }
 
+.campaigns-header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  flex-shrink: 0;
+}
+
 .campaigns-heading {
   display: flex;
   flex: 1 1 auto;
@@ -2340,7 +2366,7 @@ body.is-loading {
 
 .loading-stage {
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   overflow: hidden;
   background:
@@ -2626,21 +2652,27 @@ body.is-loading {
 .dashboard-sidebar-wrap {
   position: sticky;
   top: 0;
+  align-self: flex-start;
   z-index: 2;
   display: flex;
   width: 280px;
   height: 100vh;
+  height: 100dvh;
   flex-shrink: 0;
   padding: 4px;
   background: var(--bg-primary);
 }
 
 .dashboard-sidebar {
+  position: sticky;
+  top: 4px;
   display: flex;
   flex: 1;
   flex-direction: column;
   justify-content: space-between;
   min-width: 0;
+  height: calc(100vh - 8px);
+  height: calc(100dvh - 8px);
   border: 1px solid var(--border-secondary);
   border-radius: var(--radius-lg);
   background: var(--bg-primary);
@@ -3827,7 +3859,10 @@ body.is-loading {
 
 @media (max-width: 1100px) {
   .auth-layout {
+    height: auto;
     min-height: 100vh;
+    min-height: 100dvh;
+    overflow: auto;
   }
 
   .auth-hero-section {
@@ -5444,7 +5479,6 @@ body.is-loading {
   align-items: flex-start;
   justify-content: space-between;
   gap: 16px;
-  padding-bottom: 20px;
 }
 
 .overview-header h1 {
@@ -6192,4 +6226,386 @@ body.is-loading {
   color: #166634;
   cursor: default;
   pointer-events: none;
+}
+
+/* Laptop widths: 13–16" (1280–1440) */
+@media (max-width: 1440px) {
+  .auth-form-section,
+  .onboarding-main {
+    min-width: 0;
+  }
+
+  .auth-hero-section {
+    min-width: 0;
+    flex: 1 1 46%;
+    max-width: 50%;
+  }
+
+  .onboarding-sidebar {
+    flex-basis: 320px;
+    width: 320px;
+    max-width: 320px;
+  }
+
+  .onboarding-main {
+    padding: 96px 24px 64px;
+  }
+
+  .onboarding-main.is-centered {
+    padding-top: 64px;
+  }
+
+  .onboarding-main.is-wide {
+    padding: 28px 24px;
+  }
+
+  .onboarding-main.is-form {
+    padding: 48px 24px;
+  }
+
+  .dashboard-sidebar-wrap {
+    width: 240px;
+  }
+
+  .dashboard-main {
+    gap: 24px;
+    padding: 40px 24px 40px;
+  }
+
+  .dash-nav-item {
+    overflow: hidden;
+  }
+
+  .campaign-persona-row {
+    flex-wrap: wrap;
+  }
+
+  .campaign-log th,
+  .campaign-log td {
+    padding: 12px 14px;
+  }
+
+  .ad-table {
+    min-width: 680px;
+  }
+
+  .ad-table-row {
+    grid-template-columns: minmax(140px, 1.5fr) 88px minmax(160px, 1.8fr) minmax(72px, 1fr) minmax(72px, 1fr) minmax(72px, 1fr) 48px;
+  }
+
+  .ad-table-row > * {
+    padding: 12px 16px;
+  }
+
+  .loading-center {
+    width: min(640px, 58vw);
+    max-width: min(640px, 58vw);
+    gap: 20px;
+  }
+
+  .loading-badge {
+    padding: 10px 16px;
+    font-size: 0.82rem;
+  }
+
+  .experience-topbar {
+    padding: 28px 40px 0;
+    gap: 14px;
+  }
+
+  .experience-body {
+    padding: 24px 40px 32px;
+  }
+
+  .experience-view-toggle {
+    right: 40px;
+  }
+
+  .experience-tab {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .experience-compare.is-preview .xp-panel {
+    flex: 1 1 auto;
+    width: 100%;
+    max-width: 814px;
+  }
+
+  .launch-main {
+    gap: 20px;
+    padding: 28px 40px 20px;
+  }
+
+  .launch-header-copy h1 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .launch-row {
+    gap: 20px;
+  }
+
+  .launch-card--checklist {
+    width: min(400px, 38%);
+  }
+
+  .campaign-kpi {
+    padding: 20px;
+  }
+
+  .campaign-kpi-value {
+    font-size: 30px;
+    line-height: 38px;
+  }
+
+  .overview-main {
+    gap: 28px;
+    padding: 40px 20px 40px;
+  }
+
+  .overview-kpis {
+    gap: 10px;
+  }
+
+  .overview-kpi-value {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .onboarding-sidebar {
+    flex-basis: 260px;
+    width: 260px;
+    max-width: 260px;
+  }
+
+  .dashboard-sidebar-wrap {
+    width: 220px;
+  }
+
+  .dash-nav-header,
+  .dash-nav-section {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .dash-nav-label {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .dash-account {
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+
+  .review-header,
+  .campaigns-header,
+  .campaign-header,
+  .launch-header,
+  .overview-header,
+  .experience-title-row {
+    flex-wrap: wrap;
+  }
+
+  .review-header-actions,
+  .campaigns-header-actions,
+  .campaign-header-actions,
+  .launch-header .btn,
+  .overview-live {
+    margin-left: auto;
+  }
+
+  .brand-card.is-snapshot {
+    flex-direction: column;
+  }
+
+  .brand-thumb {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .brand-swatch,
+  .brand-swatch-chip {
+    width: 120px;
+  }
+
+  .brand-swatch-chip {
+    height: 72px;
+  }
+
+  .experience-topbar {
+    padding: 24px 24px 0;
+  }
+
+  .experience-body {
+    padding: 20px 24px 28px;
+  }
+
+  .experience-view-toggle {
+    top: 12px;
+    right: 24px;
+  }
+
+  .experience-tab {
+    font-size: 13px;
+    height: 32px;
+    padding-bottom: 8px;
+  }
+
+  .experience-title-copy p {
+    white-space: normal;
+  }
+
+  .launch-main {
+    padding: 24px 24px 16px;
+    justify-content: flex-start;
+  }
+
+  .launch-row,
+  .launch-row--bottom {
+    flex-direction: column;
+  }
+
+  .launch-card--checklist {
+    width: 100%;
+  }
+
+  .launch-exp-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .overview-kpis {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .overview-split {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-tabs {
+    overflow-x: auto;
+  }
+
+  .dash-nav-item span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .loading-center {
+    width: min(560px, 70vw);
+    max-width: min(560px, 70vw);
+  }
+
+  .loading-badge {
+    padding: 8px 12px;
+    font-size: 0.72rem;
+  }
+
+  .loading-privacy {
+    white-space: normal;
+    text-align: center;
+    width: min(90vw, 520px);
+    bottom: 20px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .auth-hero-section {
+    max-width: none;
+    flex: none;
+  }
+
+  .experience-compare {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .xp-panel {
+    max-width: 100%;
+  }
+
+  .launch-exp-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .overview-recs {
+    grid-template-columns: 1fr;
+  }
+
+  .field-row {
+    flex-direction: column;
+  }
+}
+
+@media (max-height: 900px) {
+  .auth-form-content {
+    gap: 24px;
+  }
+
+  .auth-header {
+    gap: 16px;
+  }
+
+  .auth-card,
+  .auth-form {
+    gap: 16px;
+  }
+
+  .auth-form,
+  .auth-card .field-stack {
+    gap: 16px;
+  }
+
+  .auth-hero-section {
+    padding: 16px 16px 16px 0;
+  }
+
+  .onboarding-main {
+    padding-top: 72px;
+    padding-bottom: 48px;
+  }
+
+  .onboarding-main.is-centered {
+    padding-top: 48px;
+  }
+
+  .onboarding-main.is-form {
+    padding-top: 40px;
+  }
+
+  .dashboard-main,
+  .launch-main {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .experience-topbar {
+    padding-top: 20px;
+  }
+
+  .campaign-kpi {
+    padding: 16px 20px;
+  }
+
+  .loading-privacy {
+    bottom: 16px;
+  }
+}
+
+@media (max-height: 800px) {
+  .auth-form-section {
+    padding: 16px 0;
+    justify-content: safe center;
+  }
+
+  .auth-form-content {
+    gap: 16px;
+  }
+
+  .auth-heading p {
+    white-space: normal;
+  }
 }

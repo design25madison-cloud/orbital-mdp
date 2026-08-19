@@ -398,14 +398,19 @@
                     <h1>Confirm your ad campaigns</h1>
                     <p>Orbital pulls these in from Meta Ads. Some are live, others are still drafts.</p>
                   </div>
-                  <button type="button" class="btn-outline" id="resync-meta">
-                    <span class="resync-icon-wrap">
-                      <span class="resync-icon-leaf">
-                        <img class="resync-icon" src="assets/icon-share.svg" alt="" width="17" height="17" />
+                  <div class="campaigns-header-actions">
+                    <button type="button" class="btn-outline" id="resync-meta">
+                      <span class="resync-icon-wrap">
+                        <span class="resync-icon-leaf">
+                          <img class="resync-icon" src="assets/icon-share.svg" alt="" width="17" height="17" />
+                        </span>
                       </span>
-                    </span>
-                    <span>Redirect to Meta</span>
-                  </button>
+                      <span>Redirect to Meta</span>
+                    </button>
+                    <button type="button" class="btn btn-primary btn-compact" id="campaigns-continue">
+                      <span>Continue</span>
+                    </button>
+                  </div>
                 </header>
 
                 <div class="campaigns-toolbar">
@@ -557,10 +562,6 @@
                     </div>
                   </div>
                 </section>
-
-                <button type="button" class="btn btn-primary" id="campaigns-continue">
-                  <span>Continue</span>
-                </button>
               </div>
             </div>
 
