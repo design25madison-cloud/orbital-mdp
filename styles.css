@@ -5651,7 +5651,10 @@ body.is-loading {
 
 .overview-week {
   gap: 14px;
-  padding: 20px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 30px;
 }
 
 .overview-card-head {
