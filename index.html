@@ -1,0 +1,1757 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Orbital — Create workspace</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <section class="screen is-active" data-step="1" aria-hidden="false">
+        <div class="auth-layout">
+          <div class="auth-form-section">
+            <div class="auth-form-container">
+              <div class="auth-form-content">
+                <header class="auth-header">
+                  <div class="logomark">
+                    <img src="assets/logo.svg" alt="Orbital" width="38" height="38" />
+                  </div>
+                  <div class="auth-heading">
+                    <h1>Create your Orbital workspace</h1>
+                    <p>Get from zero to personalized experiences in minutes</p>
+                  </div>
+                </header>
+
+                <div class="auth-card">
+                  <form id="create-workspace-form" class="auth-form" novalidate>
+                    <div class="field-stack">
+                      <div class="field" data-field="email">
+                        <label for="email">Work Email</label>
+                        <div class="input-shell">
+                          <input
+                            id="email"
+                            name="email"
+                            type="email"
+                            autocomplete="email"
+                            placeholder="name@company.com"
+                            spellcheck="false"
+                          />
+                        </div>
+                        <p class="field-error" data-error-for="email" hidden></p>
+                      </div>
+
+                      <div class="field" data-field="password">
+                        <label for="password">Password</label>
+                        <div class="input-shell">
+                          <input
+                            id="password"
+                            name="password"
+                            type="password"
+                            autocomplete="new-password"
+                            placeholder="Create a password"
+                            class="input-password"
+                          />
+                          <button
+                            type="button"
+                            class="icon-button"
+                            id="toggle-password"
+                            aria-label="Show password"
+                            aria-pressed="false"
+                          >
+                            <span class="icon-eye" aria-hidden="true"></span>
+                          </button>
+                        </div>
+                        <p class="field-error" data-error-for="password" hidden></p>
+                      </div>
+                    </div>
+
+                    <div class="auth-row">
+                      <label class="checkbox">
+                        <input type="checkbox" id="remember" name="remember" />
+                        <span class="checkbox-box" aria-hidden="true"></span>
+                        <span class="checkbox-label">Remember for 30 days</span>
+                      </label>
+                      <button type="button" class="text-link" id="forgot-password">
+                        Forgot password
+                      </button>
+                    </div>
+
+                    <div class="auth-actions">
+                      <button type="submit" class="btn btn-primary">
+                        <span>Create Workspace</span>
+                      </button>
+                    </div>
+                  </form>
+
+                  <div class="auth-social">
+                    <button type="button" class="btn btn-social" id="google-signin">
+                      <!-- <span class="google-icon" aria-hidden="true">
+                        <img class="google-icon__blue" src="assets/google-1.svg" alt="" />
+                        <img class="google-icon__green" src="assets/google-2.svg" alt="" />
+                        <img class="google-icon__yellow" src="assets/google-3.svg" alt="" />
+                        <img class="google-icon__red" src="assets/google-4.svg" alt="" />
+                      </span> -->
+                      <span class="google-signin-label">Sign in with Google</span>
+                    </button>
+                  </div>
+                </div>
+
+                <p class="auth-footer">
+                  Don&rsquo;t have an account?
+                  <button type="button" class="text-link" id="sign-up">Sign up</button>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <aside class="auth-hero-section" aria-hidden="true">
+            <img class="hero-visual" src="assets/hero-panel.png" alt="" />
+          </aside>
+        </div>
+      </section>
+
+      <section class="screen" data-step="onboarding" hidden aria-hidden="true">
+        <div class="onboarding-layout">
+          <aside class="onboarding-sidebar">
+            <div class="sidebar-top">
+              <div class="sidebar-logo">
+                <div class="logomark">
+                  <img src="assets/logo.svg" alt="" width="38" height="38" />
+                </div>
+                <img class="wordmark" src="assets/wordmark.svg" alt="Orbital" />
+              </div>
+
+              <ol class="stepper">
+                <li class="step is-complete" data-step-index="1">
+                  <div class="step-rail">
+                    <span class="step-icon" aria-hidden="true">
+                      <img src="assets/icon-check.svg" alt="" />
+                    </span>
+                    <span class="step-connector"></span>
+                  </div>
+                  <div class="step-copy">
+                    <p class="step-title">Create Your Workspace</p>
+                    <p class="step-desc">Please provide your name and email</p>
+                  </div>
+                </li>
+                <li class="step is-current" data-step-index="2">
+                  <div class="step-rail">
+                    <span class="step-icon" aria-hidden="true">2</span>
+                    <span class="step-connector"></span>
+                  </div>
+                  <div class="step-copy">
+                    <p class="step-title">Tell us about your business</p>
+                    <p class="step-desc">This helps Orbital understand your context and generate better personas.</p>
+                  </div>
+                </li>
+                <li class="step is-upcoming" data-step-index="3">
+                  <div class="step-rail">
+                    <span class="step-icon" aria-hidden="true">3</span>
+                    <span class="step-connector"></span>
+                  </div>
+                  <div class="step-copy">
+                    <p class="step-title">Connect your data sources</p>
+                    <p class="step-desc">Start collaborating with your team</p>
+                  </div>
+                </li>
+                <li class="step is-upcoming" data-step-index="4">
+                  <div class="step-rail">
+                    <span class="step-icon" aria-hidden="true">4</span>
+                    <span class="step-connector"></span>
+                  </div>
+                  <div class="step-copy">
+                    <p class="step-title">Ad campaigns</p>
+                    <p class="step-desc">Share posts to your social accounts</p>
+                  </div>
+                </li>
+                <li class="step is-upcoming" data-step-index="5">
+                  <div class="step-rail">
+                    <span class="step-icon" aria-hidden="true">5</span>
+                    <span class="step-connector"></span>
+                  </div>
+                  <div class="step-copy">
+                    <p class="step-title">Review generated personas</p>
+                    <p class="step-desc">Share posts to your social accounts</p>
+                  </div>
+                </li>
+                <li class="step is-upcoming" data-step-index="6">
+                  <div class="step-rail">
+                    <span class="step-icon" aria-hidden="true">6</span>
+                  </div>
+                  <div class="step-copy">
+                    <p class="step-title">Review the experience</p>
+                    <p class="step-desc">Share posts to your social accounts</p>
+                  </div>
+                </li>
+              </ol>
+            </div>
+
+            <footer class="sidebar-footer">
+              <p class="sidebar-copyright"><span aria-hidden="true">©</span> Orbital</p>
+              <a class="sidebar-help" href="mailto:help@orbital.world">
+                <img src="assets/icon-mail.svg" alt="" width="16" height="16" />
+                help@orbital.world
+              </a>
+            </footer>
+          </aside>
+
+          <div class="onboarding-main">
+            <div class="onboarding-panel" data-panel="2">
+              <div class="business-content">
+                <div class="logomark">
+                  <img src="assets/logo.svg" alt="Orbital" width="38" height="38" />
+                </div>
+                <div class="auth-heading">
+                  <h1>Tell us about your business</h1>
+                  <p>This helps Orbital understand your context and generate better personas</p>
+                </div>
+
+                <form id="business-form" class="business-form" novalidate>
+                  <div class="field-row">
+                    <div class="field">
+                      <label for="company-name">Company Name</label>
+                      <div class="input-shell">
+                        <input id="company-name" name="companyName" type="text" placeholder="Name" autocomplete="organization" />
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label for="website">Website</label>
+                      <div class="input-shell">
+                        <input id="website" name="website" type="text" placeholder="website.com" autocomplete="url" spellcheck="false" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="business-fields">
+                    <div class="field">
+                      <p class="field-label" id="platform-label">Ecommerce Platform</p>
+                      <div class="pill-group pill-group--with-check" role="group" aria-labelledby="platform-label" data-group="ecommercePlatform">
+                        <button type="button" class="pill is-selected" data-value="Shopify">
+                          <span>Shopify</span>
+                          <span class="pill-check" aria-hidden="true">
+                            <img src="assets/icon-check.svg" alt="" />
+                          </span>
+                        </button>
+                        <button type="button" class="pill" data-value="Headless"><span>Headless</span><span class="pill-check" aria-hidden="true"><img src="assets/icon-check.svg" alt="" /></span></button>
+                        <button type="button" class="pill" data-value="WooCommerce"><span>WooCommerce</span><span class="pill-check" aria-hidden="true"><img src="assets/icon-check.svg" alt="" /></span></button>
+                        <button type="button" class="pill" data-value="Custom"><span>Custom</span><span class="pill-check" aria-hidden="true"><img src="assets/icon-check.svg" alt="" /></span></button>
+                      </div>
+                    </div>
+
+                    <div class="field">
+                      <label id="industry-label" for="industry-trigger">Industry</label>
+                      <div class="select" data-select="industry">
+                        <button type="button" class="select-trigger" id="industry-trigger" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="industry-label">
+                          <span class="select-value is-placeholder">Select industry</span>
+                          <img class="select-chevron" src="assets/icon-chevron-down.svg" alt="" width="16" height="16" />
+                        </button>
+                        <ul class="select-menu" role="listbox" hidden>
+                          <li role="option" data-value="Fashion &amp; Apparel">Fashion &amp; Apparel</li>
+                          <li role="option" data-value="Beauty &amp; Wellness">Beauty &amp; Wellness</li>
+                          <li role="option" data-value="Home &amp; Lifestyle">Home &amp; Lifestyle</li>
+                          <li role="option" data-value="Food &amp; Beverage">Food &amp; Beverage</li>
+                          <li role="option" data-value="Electronics">Electronics</li>
+                          <li role="option" data-value="Other">Other</li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class="field">
+                      <label for="product-line">Primary product line</label>
+                      <div class="input-shell">
+                        <input id="product-line" name="primaryProductLine" type="text" placeholder="eg. Women’s activewear" />
+                        <span class="help-wrap">
+                          <button type="button" class="help-button" aria-describedby="product-line-tip" aria-label="More information">
+                            <img src="assets/icon-help.svg" alt="" width="16" height="16" />
+                          </button>
+                          <span class="tooltip" id="product-line-tip" role="tooltip">Be specific — this helps Orbital tailor persona language</span>
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="field">
+                      <p class="field-label" id="traffic-label">Monthly traffic range</p>
+                      <div class="pill-group pill-group--equal" role="group" aria-labelledby="traffic-label" data-group="monthlyTraffic">
+                        <button type="button" class="pill" data-value="&lt;10k"><span>&lt;10k</span></button>
+                        <button type="button" class="pill is-selected" data-value="10k-50k"><span>10k-50k</span></button>
+                        <button type="button" class="pill" data-value="50k-200k"><span>50k-200k</span></button>
+                        <button type="button" class="pill" data-value="200k+"><span>200k+</span></button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <button type="submit" class="btn btn-primary">
+                    <span>Continue</span>
+                  </button>
+                </form>
+              </div>
+            </div>
+
+            <div class="onboarding-panel" data-panel="3" hidden>
+              <div class="sources-content">
+                <div class="logomark">
+                  <img src="assets/logo.svg" alt="Orbital" width="38" height="38" />
+                </div>
+                <div class="auth-heading">
+                  <h1>Connect your data sources</h1>
+                  <p>Orbital needs access to your store and ad campaigns to generate experiences.</p>
+                </div>
+
+                <div class="sources-body">
+                  <div class="source-list">
+                    <article class="source-card is-connected" data-source="shopify" data-locked="true">
+                      <div class="source-copy">
+                        <div class="source-title-row">
+                          <h2>Shopify</h2>
+                          <span class="badge-required">Required</span>
+                        </div>
+                        <p>Sync products, pages &amp; store data</p>
+                      </div>
+                      <div class="source-action">
+                        <button type="button" class="btn-connect is-connected" aria-disabled="true">
+                          <img class="btn-connect-icon" src="assets/icon-check-square.svg" alt="" />
+                          <span>Connected</span>
+                        </button>
+                        <span class="tooltip">Shopify is required and can&rsquo;t be disconnected</span>
+                      </div>
+                    </article>
+
+                    <article class="source-card" data-source="metaAds">
+                      <div class="source-copy">
+                        <div class="source-title-row">
+                          <h2>Meta Ads</h2>
+                        </div>
+                        <p>Import campaigns, ad sets &amp; creatives</p>
+                      </div>
+                      <div class="source-action">
+                        <button type="button" class="btn-connect">
+                          <img class="btn-connect-icon" src="assets/icon-check-square.svg" alt="" hidden />
+                          <span>Connect</span>
+                        </button>
+                      </div>
+                    </article>
+
+                    <article class="source-card" data-source="ga4">
+                      <div class="source-copy">
+                        <div class="source-title-row">
+                          <h2>Google Analytics 4</h2>
+                        </div>
+                        <p>Import traffic &amp; conversion data</p>
+                      </div>
+                      <div class="source-action">
+                        <button type="button" class="btn-connect">
+                          <img class="btn-connect-icon" src="assets/icon-check-square.svg" alt="" hidden />
+                          <span>Connect</span>
+                        </button>
+                      </div>
+                    </article>
+
+                    <article class="source-card" data-source="klaviyo">
+                      <div class="source-copy">
+                        <div class="source-title-row">
+                          <h2>Klaviyo</h2>
+                        </div>
+                        <p>Import email segments &amp; audiences</p>
+                      </div>
+                      <div class="source-action">
+                        <button type="button" class="btn-connect">
+                          <img class="btn-connect-icon" src="assets/icon-check-square.svg" alt="" hidden />
+                          <span>Connect</span>
+                        </button>
+                      </div>
+                    </article>
+
+                    <article class="source-card" data-source="googleAds">
+                      <div class="source-copy">
+                        <div class="source-title-row">
+                          <h2>Google Ads</h2>
+                        </div>
+                        <p>Import search campaings</p>
+                      </div>
+                      <div class="source-action">
+                        <button type="button" class="btn-connect">
+                          <img class="btn-connect-icon" src="assets/icon-check-square.svg" alt="" hidden />
+                          <span>Connect</span>
+                        </button>
+                      </div>
+                    </article>
+                  </div>
+
+                  <button type="button" class="btn btn-primary" id="sources-continue">
+                    <span>Continue</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="onboarding-panel" data-panel="4" hidden>
+              <div class="campaigns-content">
+                <header class="campaigns-header">
+                  <div class="campaigns-heading">
+                    <h1>Confirm your ad campaigns</h1>
+                    <p>Orbital pulls these in from Meta Ads. Some are live, others are still drafts.</p>
+                  </div>
+                  <button type="button" class="btn-outline" id="resync-meta">
+                    <span class="resync-icon-wrap">
+                      <span class="resync-icon-leaf">
+                        <img class="resync-icon" src="assets/icon-share.svg" alt="" width="17" height="17" />
+                      </span>
+                    </span>
+                    <span>Redirect to Meta</span>
+                  </button>
+                </header>
+
+                <div class="campaigns-toolbar">
+                  <label class="search-field">
+                    <img src="assets/icon-search.svg" alt="" width="16" height="16" />
+                    <input id="ad-search" type="search" placeholder="Search ads, campaigns..." autocomplete="off" />
+                    <kbd>⌘K</kbd>
+                  </label>
+                  <div class="filters-wrap">
+                    <button type="button" class="btn-outline" id="filters-toggle" aria-expanded="false" aria-haspopup="true">
+                      <img src="assets/icon-filter.svg" alt="" width="20" height="20" />
+                      <span>Filters</span>
+                      <img class="filters-chevron" src="assets/icon-chevron-down.svg" alt="" width="16" height="16" />
+                    </button>
+                    <div class="filters-panel" id="filters-panel" hidden>
+                      <p>Filter options will appear here.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <section class="campaign-section" data-section="published">
+                  <h2>Published</h2>
+                  <div class="ad-table">
+                    <div class="ad-table-row ad-table-head" role="row">
+                      <span>Ad</span>
+                      <span>Status</span>
+                      <span>Campaign • Audience</span>
+                      <span>Budget</span>
+                      <span>Impressions</span>
+                      <span>Last Synced</span>
+                      <span class="ad-row-actions" aria-hidden="true"></span>
+                    </div>
+                    <div class="ad-table-row" data-ad-name="50% Off Bundle">
+                      <span class="ad-name">50% Off Bundle</span>
+                      <span><span class="status-badge is-live"><img src="assets/dot-live.svg" alt="" width="8" height="8" /><span>Live</span></span></span>
+                      <span class="ad-meta">Deal Seeker • Retargeting</span>
+                      <span class="ad-meta">$50/day</span>
+                      <span class="ad-meta">12.4k</span>
+                      <span class="ad-meta ad-synced">45 sec ago</span>
+                      <div class="ad-row-actions">
+                        <button type="button" class="ad-row-action" data-ad-open aria-label="Open 50% Off Bundle">
+                          <span class="ad-row-action-box">
+                            <span class="ad-row-action-leaf">
+                              <img src="assets/icon-arrow-up-right.svg" alt="" width="8" height="8" />
+                            </span>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="ad-table-row" data-ad-name="Loyalty Perks">
+                      <span class="ad-name">Loyalty Perks</span>
+                      <span><span class="status-badge is-live"><img src="assets/dot-live.svg" alt="" width="8" height="8" /><span>Live</span></span></span>
+                      <span class="ad-meta">Loyal Subscriber • Repeat Purchase</span>
+                      <span class="ad-meta">$30/day</span>
+                      <span class="ad-meta">8.2k</span>
+                      <span class="ad-meta ad-synced">12 min ago</span>
+                      <div class="ad-row-actions">
+                        <button type="button" class="ad-row-action" data-ad-open aria-label="Open Loyalty Perks">
+                          <span class="ad-row-action-box">
+                            <span class="ad-row-action-leaf">
+                              <img src="assets/icon-arrow-up-right.svg" alt="" width="8" height="8" />
+                            </span>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="ad-table-row" data-ad-name="Flash Sale Countdown">
+                      <span class="ad-name">Flash Sale Countdown</span>
+                      <span><span class="status-badge is-live"><img src="assets/dot-live.svg" alt="" width="8" height="8" /><span>Live</span></span></span>
+                      <span class="ad-meta">Deal Seeker • Urgency</span>
+                      <span class="ad-meta">$22/day</span>
+                      <span class="ad-meta">5.1k</span>
+                      <span class="ad-meta ad-synced">2 weeks ago</span>
+                      <div class="ad-row-actions">
+                        <button type="button" class="ad-row-action" data-ad-open aria-label="Open Flash Sale Countdown">
+                          <span class="ad-row-action-box">
+                            <span class="ad-row-action-leaf">
+                              <img src="assets/icon-arrow-up-right.svg" alt="" width="8" height="8" />
+                            </span>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="ad-table-row is-last" data-ad-name="Free Shipping Weekend">
+                      <span class="ad-name">Free Shipping Weekend</span>
+                      <span><span class="status-badge is-live"><img src="assets/dot-live.svg" alt="" width="8" height="8" /><span>Live</span></span></span>
+                      <span class="ad-meta">Loyal Subscriber • Weekend Only</span>
+                      <span class="ad-meta">$18/day</span>
+                      <span class="ad-meta">6.7k</span>
+                      <span class="ad-meta ad-synced">Last month</span>
+                      <div class="ad-row-actions">
+                        <button type="button" class="ad-row-action" data-ad-open aria-label="Open Free Shipping Weekend">
+                          <span class="ad-row-action-box">
+                            <span class="ad-row-action-leaf">
+                              <img src="assets/icon-arrow-up-right.svg" alt="" width="8" height="8" />
+                            </span>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <section class="campaign-section" data-section="drafts">
+                  <h2>Drafts</h2>
+                  <div class="ad-table">
+                    <div class="ad-table-row ad-table-head" role="row">
+                      <span>Ad</span>
+                      <span>Status</span>
+                      <span>Campaign • Audience</span>
+                      <span>Budget</span>
+                      <span>Impressions</span>
+                      <span>Last Synced</span>
+                      <span class="ad-row-actions" aria-hidden="true"></span>
+                    </div>
+                    <div class="ad-table-row" data-ad-name="Train Smarter This Summer">
+                      <span class="ad-name">Train Smarter This Summer</span>
+                      <span><span class="status-badge is-draft"><img src="assets/dot-draft.svg" alt="" width="8" height="8" /><span>Draft</span></span></span>
+                      <span class="ad-meta">Performance Pro • Cold Traffic</span>
+                      <span class="ad-meta">---</span>
+                      <span class="ad-meta">---</span>
+                      <span class="ad-meta ad-synced">3 hrs ago</span>
+                      <div class="ad-row-actions">
+                        <button type="button" class="ad-row-action" data-ad-open aria-label="Open Train Smarter This Summer">
+                          <span class="ad-row-action-box">
+                            <span class="ad-row-action-leaf">
+                              <img src="assets/icon-arrow-up-right.svg" alt="" width="8" height="8" />
+                            </span>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="ad-table-row is-last" data-ad-name="Science Backed Results">
+                      <span class="ad-name">Science Backed Results</span>
+                      <span><span class="status-badge is-draft"><img src="assets/dot-draft.svg" alt="" width="8" height="8" /><span>Draft</span></span></span>
+                      <span class="ad-meta">Wellness Curious • Interest Based</span>
+                      <span class="ad-meta">---</span>
+                      <span class="ad-meta">---</span>
+                      <span class="ad-meta ad-synced">Yesterday</span>
+                      <div class="ad-row-actions">
+                        <button type="button" class="ad-row-action" data-ad-open aria-label="Open Science Backed Results">
+                          <span class="ad-row-action-box">
+                            <span class="ad-row-action-leaf">
+                              <img src="assets/icon-arrow-up-right.svg" alt="" width="8" height="8" />
+                            </span>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <button type="button" class="btn btn-primary" id="campaigns-continue">
+                  <span>Continue</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="onboarding-panel" data-panel="5.1" hidden>
+              <div class="personas-content">
+                <div class="logomark">
+                  <img src="assets/logo.svg" alt="Orbital" width="38" height="38" />
+                </div>
+                <div class="auth-heading">
+                  <h1>Generate your personas</h1>
+                  <p>Create up to 4 personas to test at the campaign level. Choose how you&rsquo;d like to start.</p>
+                </div>
+
+                <div class="personas-body">
+                  <div class="method-list" role="radiogroup" aria-label="How to generate personas">
+                    <button type="button" class="method-card" data-method="auto" role="radio" aria-checked="false">
+                      <span class="method-title">Generate automatically</span>
+                      <span class="method-copy">Orbital analyzes your ad creatives and Shopify data to draft up to 4 personas.</span>
+                    </button>
+                    <button type="button" class="method-card" data-method="upload" role="radio" aria-checked="false">
+                      <span class="method-title">Upload a spreadsheet or doc</span>
+                      <span class="method-copy">Already have personas defined? Upload a file and we&rsquo;ll structure it for you.</span>
+                    </button>
+                    <button type="button" class="method-card is-selected" data-method="manual" role="radio" aria-checked="true">
+                      <span class="method-title">Type them in manually</span>
+                      <span class="method-copy">Prefer to write your own? Add each persona&rsquo;s name and description directly.</span>
+                    </button>
+                  </div>
+
+                  <button type="button" class="btn btn-primary" id="personas-method-continue">
+                    <span>Continue</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="onboarding-panel" data-panel="5.2" hidden>
+              <form class="persona-form" id="persona-form" novalidate>
+                <div class="persona-dot" aria-hidden="true">
+                  <img src="assets/icon-persona-dot.svg" alt="" width="40" height="40" />
+                </div>
+                <div class="persona-header">
+                  <h1>Add a persona</h1>
+                  <p id="persona-counter">Persona 1 of 4 · Tell Orbital who you&rsquo;re building this experience for.</p>
+                </div>
+
+                <div class="field">
+                  <label for="persona-name">Persona name</label>
+                  <div class="input-shell input-shell--tight">
+                    <img class="field-leading-icon" src="assets/icon-mail-field.svg" alt="" width="20" height="20" />
+                    <input id="persona-name" name="name" type="text" autocomplete="off" />
+                    <span class="help-wrap">
+                      <button type="button" class="help-button" aria-describedby="persona-name-tip" aria-label="More information">
+                        <img src="assets/icon-help.svg" alt="" width="16" height="16" />
+                      </button>
+                      <span class="tooltip" id="persona-name-tip" role="tooltip">A short label for this audience</span>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label for="persona-audience">Target audience</label>
+                  <div class="input-shell input-shell--tight">
+                    <img class="field-leading-icon" src="assets/icon-mail-field.svg" alt="" width="20" height="20" />
+                    <input id="persona-audience" name="audience" type="text" autocomplete="off" />
+                    <span class="help-wrap">
+                      <button type="button" class="help-button" aria-describedby="persona-audience-tip" aria-label="More information">
+                        <img src="assets/icon-help.svg" alt="" width="16" height="16" />
+                      </button>
+                      <span class="tooltip" id="persona-audience-tip" role="tooltip">Age, intent, and shopping context</span>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="field field--textarea-lg">
+                  <div class="label-row">
+                    <label for="persona-description">Description (ICP)</label>
+                    <span class="help-wrap">
+                      <button type="button" class="help-button" aria-describedby="persona-description-tip" aria-label="More information">
+                        <img src="assets/icon-help.svg" alt="" width="16" height="16" />
+                      </button>
+                      <span class="tooltip" id="persona-description-tip" role="tooltip">Motivations, barriers, and what they need to convert</span>
+                    </span>
+                  </div>
+                  <textarea id="persona-description" name="description"></textarea>
+                </div>
+
+                <div class="field persona-upload-field">
+                  <p class="persona-upload-label">Upload images, style guides, or any other marketing materials</p>
+                  <div class="persona-upload">
+                    <input
+                      id="persona-materials"
+                      class="persona-upload-input"
+                      type="file"
+                      name="materials"
+                      accept=".svg,.png,.jpg,.jpeg,.gif,image/svg+xml,image/png,image/jpeg,image/gif"
+                      multiple
+                    />
+                    <span class="persona-upload-icon" aria-hidden="true">
+                      <span class="persona-upload-icon-box">
+                        <span class="persona-upload-icon-leaf">
+                          <img src="assets/icon-upload-cloud.svg" alt="" width="18" height="17" />
+                        </span>
+                      </span>
+                    </span>
+                    <span class="persona-upload-copy">
+                      <span class="persona-upload-action">
+                        <span class="persona-upload-cta">Click to upload</span>
+                        <span>or drag and drop</span>
+                      </span>
+                      <span class="persona-upload-hint">SVG, PNG, JPG or GIF (max. 800x400px)</span>
+                    </span>
+                  </div>
+                  <ul class="persona-upload-files" id="persona-upload-files" hidden></ul>
+                </div>
+
+                <div class="field field--textarea-sm">
+                  <div class="label-row">
+                    <label for="persona-example">Example language</label>
+                    <span class="help-wrap">
+                      <button type="button" class="help-button" aria-describedby="persona-example-tip" aria-label="More information">
+                        <img src="assets/icon-help.svg" alt="" width="16" height="16" />
+                      </button>
+                      <span class="tooltip" id="persona-example-tip" role="tooltip">Headline or CTA language this persona would respond to</span>
+                    </span>
+                  </div>
+                  <textarea id="persona-example" name="exampleLanguage"></textarea>
+                </div>
+
+                <div class="field module-field">
+                  <p class="module-label" id="language-module-label">Language module — pick one</p>
+                  <div class="module-row" role="radiogroup" aria-labelledby="language-module-label">
+                    <button type="button" class="module-card is-selected" data-module="cultural" role="radio" aria-checked="true">
+                      <span class="module-title">Cultural Language</span>
+                      <span class="module-copy">Trend-driven, aesthetic-led copy</span>
+                    </button>
+                    <button type="button" class="module-card" data-module="scientific" role="radio" aria-checked="false">
+                      <span class="module-title">Scientific / Mechanism Language</span>
+                      <span class="module-copy">Efficacy- and proof-driven copy</span>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="field field--textarea-lg">
+                  <div class="label-row">
+                    <label for="persona-landing">Tell us about your distinct landing pages</label>
+                    <span class="help-wrap">
+                      <button type="button" class="help-button" aria-describedby="persona-landing-tip" aria-label="More information">
+                        <img src="assets/icon-help.svg" alt="" width="16" height="16" />
+                      </button>
+                      <span class="tooltip" id="persona-landing-tip" role="tooltip">Notes on landing-page differences this persona needs</span>
+                    </span>
+                  </div>
+                  <textarea id="persona-landing" name="landingPageNotes"></textarea>
+                </div>
+
+                <div class="persona-info" aria-hidden="false">
+                  <p class="persona-info-title">Also included automatically</p>
+                  <p>Social Proof and Offer apply to every experience — no need to set these per persona.</p>
+                </div>
+
+                <div class="persona-actions">
+                  <button type="button" class="text-link" id="persona-back">← Back</button>
+                  <div class="persona-actions-right">
+                    <button type="button" class="btn-outline" id="persona-add-another">
+                      <span>Save &amp; add another</span>
+                    </button>
+                    <button type="submit" class="btn btn-primary btn-compact" id="persona-save">
+                      <span>Save Persona</span>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <div class="onboarding-panel" data-panel="5.3" hidden>
+              <div class="review-content">
+                <header class="review-header">
+                  <div class="review-heading">
+                    <h1>Review your personas</h1>
+                    <p id="review-subtitle">These are your 0 personas. Edit anything that&rsquo;s off.</p>
+                  </div>
+                  <div class="review-header-actions">
+                    <button type="button" class="btn-outline" id="review-add">
+                      <img src="assets/icon-plus.svg" alt="" width="20" height="20" />
+                      <span>Add another persona</span>
+                    </button>
+                    <button type="button" class="btn btn-primary btn-compact" id="review-continue">
+                      <span>Continue</span>
+                    </button>
+                  </div>
+                </header>
+                <div class="review-grid" id="review-grid"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen screen-loading" data-step="loading" hidden aria-hidden="true">
+        <div class="loading-stage">
+          <svg class="loading-track" aria-hidden="true">
+            <ellipse
+              cx="50%"
+              cy="50%"
+              rx="40%"
+              ry="40%"
+              fill="none"
+              stroke="rgba(255,255,255,0.28)"
+              stroke-width="2"
+              stroke-dasharray="6 9"
+            />
+          </svg>
+
+          <div class="loading-badge is-active" data-stop="0" style="left: 50%; top: 10%">Customer Context</div>
+          <div class="loading-badge" data-stop="1" style="left: 81%; top: 25%">Signals</div>
+          <div class="loading-badge" data-stop="2" style="left: 89%; top: 59%">Context Engine</div>
+          <div class="loading-badge" data-stop="3" style="left: 68%; top: 86%">Decision State</div>
+          <div class="loading-badge" data-stop="4" style="left: 33%; top: 86%">Decision Engine</div>
+          <div class="loading-badge" data-stop="5" style="left: 11%; top: 59%">Adaptive Experience</div>
+          <div class="loading-badge" data-stop="6" style="left: 19%; top: 25%">Learning</div>
+
+          <div class="loading-orbit" aria-hidden="true"></div>
+
+          <div class="loading-center">
+            <div class="loading-lockup">
+              <img class="loading-mark" src="assets/logo-loading.svg" alt="" width="36" height="36" />
+              <h1 class="loading-headline">Orbital is Thinking...</h1>
+            </div>
+            <div class="loading-subhead-slot" id="loading-subhead-slot">
+              <p class="loading-subhead" data-stop="0">Gathering customer context from your store and campaigns...</p>
+            </div>
+            <div class="loading-checklist" aria-live="polite">
+              <div class="loading-checklist-slot" id="loading-checklist-slot">
+                <div class="loading-check-row" data-check="0">
+                  <div class="loading-check-rail">
+                    <span class="loading-check-glyph">
+                      <img src="assets/icon-check.svg" alt="" width="10" height="8" />
+                    </span>
+                    <span class="loading-check-stem" aria-hidden="true"></span>
+                  </div>
+                  <div class="loading-check-copy">
+                    <p class="loading-check-title">Reading ad creatives</p>
+                    <p class="loading-check-sub">12 creatives across 3 campaigns</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p class="loading-privacy">Orbital never stores or shares your creative content.</p>
+        </div>
+      </section>
+
+      <section class="screen screen-brand" data-step="brand" hidden aria-hidden="true">
+        <div class="dashboard-layout">
+          <div class="dashboard-sidebar-wrap">
+            <aside class="dashboard-sidebar">
+              <div class="dash-nav">
+                <div class="dash-nav-header">
+                  <div class="dash-logo">
+                    <img class="dash-logomark" src="assets/logo.svg" alt="" width="24" height="24" />
+                    <img class="dash-wordmark" src="assets/wordmark-dashboard.svg" alt="Orbital" width="42" height="12" />
+                  </div>
+                  <button type="button" class="dash-search" aria-label="Search">
+                    <img src="assets/nav-search.svg" alt="" width="16" height="16" />
+                  </button>
+                </div>
+
+                <nav class="dash-nav-body" aria-label="Dashboard">
+                  <p class="dash-nav-label">ANALYTICS</p>
+                  <div class="dash-nav-section">
+                    <button type="button" class="dash-nav-item is-current">
+                      <img src="assets/nav-chart.svg" alt="" width="20" height="20" />
+                      <span>Executive Summary</span>
+                    </button>
+                    <button type="button" class="dash-nav-item">
+                      <img src="assets/nav-rows.svg" alt="" width="20" height="20" />
+                      <span>Persona Intelligence</span>
+                    </button>
+                    <button type="button" class="dash-nav-item">
+                      <img src="assets/nav-file.svg" alt="" width="20" height="20" />
+                      <span>Journey Attribution</span>
+                    </button>
+                    <button type="button" class="dash-nav-item">
+                      <img src="assets/nav-calendar.svg" alt="" width="20" height="20" />
+                      <span>Optimization Ops</span>
+                    </button>
+                  </div>
+
+                  <p class="dash-nav-label">CONFIGURATION</p>
+                  <div class="dash-nav-section">
+                    <button type="button" class="dash-nav-item">
+                      <img src="assets/nav-pie.svg" alt="" width="20" height="20" />
+                      <span>Experience Library</span>
+                    </button>
+                    <button type="button" class="dash-nav-item">
+                      <img src="assets/nav-check.svg" alt="" width="20" height="20" />
+                      <span>Ad Mapping</span>
+                      <span class="dash-nav-badge">8</span>
+                    </button>
+                    <button type="button" class="dash-nav-item">
+                      <img src="assets/nav-users.svg" alt="" width="20" height="20" />
+                      <span>Settings</span>
+                    </button>
+                  </div>
+                </nav>
+              </div>
+
+              <div class="dash-account">
+                <div class="dash-avatar-wrap">
+                  <img class="dash-avatar" src="assets/avatar-olivia.png" alt="" width="40" height="40" />
+                  <img class="dash-avatar-status" src="assets/icon-status-online.svg" alt="" width="14" height="14" />
+                </div>
+                <div class="dash-account-copy">
+                  <p class="dash-account-name">Olivia Rhye</p>
+                  <p class="dash-account-email">olivia@untitledui.com</p>
+                </div>
+                <img class="dash-account-chevron" src="assets/nav-chevron.svg" alt="" width="16" height="16" />
+              </div>
+            </aside>
+          </div>
+
+          <main class="dashboard-main">
+            <header class="brand-page-header">
+              <div class="brand-title-row">
+                <h1>Brand System</h1>
+                <span class="brand-extracted">Auto-extracted</span>
+              </div>
+              <p class="brand-subtitle" id="brand-subtitle">Pulled from loremipsum.com • 12 pages crawled • Last synced 2 hours ago</p>
+            </header>
+
+            <div id="brand-sections"></div>
+
+            <section class="brand-verify">
+              <div class="brand-card-header">
+                <h2>What Orbital is confident about</h2>
+                <p>A transparent breakdown – so nothing here is a guess dressed up as fact</p>
+              </div>
+              <div class="brand-verify-row">
+                <span class="brand-verify-icon is-ok">
+                  <img src="assets/icon-check-circle.svg" alt="" width="16" height="16" />
+                </span>
+                <div>
+                  <p class="brand-verify-title">Colors</p>
+                  <p class="brand-verify-copy">Extracted directly from live CSS</p>
+                </div>
+              </div>
+              <div class="brand-verify-row">
+                <span class="brand-verify-icon is-ok">
+                  <img src="assets/icon-check-circle.svg" alt="" width="16" height="16" />
+                </span>
+                <div>
+                  <p class="brand-verify-title">Logo</p>
+                  <p class="brand-verify-copy">Pulled from site header + favicon</p>
+                </div>
+              </div>
+              <div class="brand-verify-row">
+                <span class="brand-verify-icon is-ok">
+                  <img src="assets/icon-check-circle.svg" alt="" width="16" height="16" />
+                </span>
+                <div>
+                  <p class="brand-verify-title">Copy &amp; tone</p>
+                  <p class="brand-verify-copy">Sourced from 84 real text blocks across 12 pages</p>
+                </div>
+              </div>
+              <div class="brand-verify-row">
+                <span class="brand-verify-icon is-warn">
+                  <img src="assets/icon-alert-circle.svg" alt="" width="16" height="16" />
+                </span>
+                <div>
+                  <p class="brand-verify-title">Typography</p>
+                  <p class="brand-verify-copy">Exact font not publicly detectable — using closest visual match</p>
+                </div>
+              </div>
+              <div class="brand-verify-flag">
+                <span>See something that's wrong?</span>
+                <button type="button" class="brand-flag-link" id="brand-flag">
+                  <span>Flag it for review</span>
+                  <img src="assets/icon-arrow-right.svg" alt="" width="16" height="16" />
+                </button>
+              </div>
+            </section>
+
+            <div class="brand-footer">
+              <button type="button" class="btn btn-primary btn-compact" id="brand-continue">
+                <span>Looks good, continue</span>
+              </button>
+            </div>
+          </main>
+        </div>
+      </section>
+
+      <section class="screen screen-campaign" data-step="campaign" hidden aria-hidden="true">
+        <div class="dashboard-layout">
+          <div class="dashboard-sidebar-wrap">
+            <aside class="dashboard-sidebar">
+              <div class="dash-nav">
+                <div class="dash-nav-header">
+                  <div class="dash-logo">
+                    <img class="dash-logomark" src="assets/logo.svg" alt="" width="24" height="24" />
+                    <img class="dash-wordmark" src="assets/wordmark-dashboard.svg" alt="Orbital" width="42" height="12" />
+                  </div>
+                  <button type="button" class="dash-search" aria-label="Search">
+                    <img src="assets/nav-search.svg" alt="" width="16" height="16" />
+                  </button>
+                </div>
+
+                <nav class="dash-nav-body" aria-label="Dashboard">
+                  <p class="dash-nav-label">ANALYTICS</p>
+                  <div class="dash-nav-section">
+                    <button type="button" class="dash-nav-item is-current">
+                      <img src="assets/nav-chart.svg" alt="" width="20" height="20" />
+                      <span>Executive Summary</span>
+                    </button>
+                    <button type="button" class="dash-nav-item">
+                      <img src="assets/nav-rows.svg" alt="" width="20" height="20" />
+                      <span>Persona Intelligence</span>
+                    </button>
+                    <button type="button" class="dash-nav-item">
+                      <img src="assets/nav-file.svg" alt="" width="20" height="20" />
+                      <span>Journey Attribution</span>
+                    </button>
+                    <button type="button" class="dash-nav-item">
+                      <img src="assets/nav-calendar.svg" alt="" width="20" height="20" />
+                      <span>Optimization Ops</span>
+                    </button>
+                  </div>
+
+                  <p class="dash-nav-label">CONFIGURATION</p>
+                  <div class="dash-nav-section">
+                    <button type="button" class="dash-nav-item">
+                      <img src="assets/nav-pie.svg" alt="" width="20" height="20" />
+                      <span>Experience Library</span>
+                    </button>
+                    <button type="button" class="dash-nav-item">
+                      <img src="assets/nav-check.svg" alt="" width="20" height="20" />
+                      <span>Ad Mapping</span>
+                      <span class="dash-nav-badge">8</span>
+                    </button>
+                    <button type="button" class="dash-nav-item">
+                      <img src="assets/nav-users.svg" alt="" width="20" height="20" />
+                      <span>Settings</span>
+                    </button>
+                  </div>
+                </nav>
+              </div>
+
+              <div class="dash-account">
+                <div class="dash-avatar-wrap">
+                  <img class="dash-avatar" src="assets/avatar-olivia.png" alt="" width="40" height="40" />
+                  <img class="dash-avatar-status" src="assets/icon-status-online.svg" alt="" width="14" height="14" />
+                </div>
+                <div class="dash-account-copy">
+                  <p class="dash-account-name">Olivia Rhye</p>
+                  <p class="dash-account-email">olivia@untitledui.com</p>
+                </div>
+                <img class="dash-account-chevron" src="assets/nav-chevron.svg" alt="" width="16" height="16" />
+              </div>
+            </aside>
+          </div>
+
+          <main class="dashboard-main campaign-main">
+            <header class="campaign-header">
+              <div class="campaign-header-copy">
+                <div class="brand-title-row">
+                  <h1 class="campaign-title">Campaign Level Dashboard</h1>
+                  <span class="campaign-live">
+                    <img src="assets/dot-live-green.svg" alt="" width="8" height="8" />
+                    <span>Live</span>
+                  </span>
+                </div>
+                <p class="brand-subtitle" id="campaign-subtitle">Lorem Ipsum Co. • 4 personas testing • Since Jun 1</p>
+              </div>
+              <div class="campaign-header-actions">
+                <button type="button" class="btn btn-primary btn-compact" id="campaign-launch">
+                  <span>Ready to Launch</span>
+                </button>
+                <button type="button" class="btn-outline" id="campaign-review-experiences">
+                  <span>Review Experiences</span>
+                  <img src="assets/icon-arrow-right.svg" alt="" width="20" height="20" />
+                </button>
+              </div>
+            </header>
+
+            <section class="campaign-kpi">
+              <p class="campaign-kpi-label">Conversion rate</p>
+              <div class="campaign-kpi-value-row">
+                <p class="campaign-kpi-value">58.4%</p>
+                <span class="campaign-pill is-up">+18.4% vs control</span>
+              </div>
+              <p class="campaign-kpi-foot">The one metric we&rsquo;re indexing on for this campaign</p>
+            </section>
+
+            <section class="campaign-block">
+              <div class="brand-card-header">
+                <h2>Personas</h2>
+                <p>4 of 4 used for this campaign</p>
+              </div>
+              <div class="campaign-persona-row" id="campaign-personas"></div>
+            </section>
+
+            <section class="campaign-block">
+              <div class="brand-card-header">
+                <h2>Conversion rate by persona</h2>
+                <p>Sorted highest to lowest</p>
+              </div>
+              <div class="campaign-chart-card" id="campaign-chart"></div>
+            </section>
+
+            <section class="campaign-block">
+              <div class="brand-card-header">
+                <h2>Test log</h2>
+                <p>A running record of what&rsquo;s been changed per persona and whether it worked – tracked separately from the persona definition itself.</p>
+              </div>
+              <div class="campaign-log-wrap" id="campaign-log"></div>
+            </section>
+          </main>
+        </div>
+      </section>
+
+      <section class="screen screen-experience" data-step="experience" hidden aria-hidden="true">
+        <div class="experience-layout">
+          <div class="experience-rail-wrap">
+            <aside class="experience-rail" aria-label="Orbital">
+              <div class="experience-rail-top">
+                <div class="experience-rail-logo">
+                  <img src="assets/logo.svg" alt="Orbital" width="24" height="24" />
+                </div>
+                <nav class="experience-rail-nav" aria-label="Primary">
+                  <button type="button" class="experience-rail-btn" aria-label="Home">
+                    <img src="assets/rail-home.svg" alt="" width="20" height="20" />
+                  </button>
+                  <button type="button" class="experience-rail-btn is-current" aria-label="Analytics" aria-current="page">
+                    <img src="assets/rail-chart.svg" alt="" width="20" height="20" />
+                  </button>
+                  <button type="button" class="experience-rail-btn" aria-label="Rows">
+                    <img src="assets/rail-rows.svg" alt="" width="20" height="20" />
+                  </button>
+                  <button type="button" class="experience-rail-btn" aria-label="Checklist">
+                    <img src="assets/rail-check.svg" alt="" width="20" height="20" />
+                  </button>
+                  <button type="button" class="experience-rail-btn" aria-label="Reports">
+                    <img src="assets/rail-pie.svg" alt="" width="20" height="20" />
+                  </button>
+                  <button type="button" class="experience-rail-btn" aria-label="People">
+                    <img src="assets/rail-users.svg" alt="" width="20" height="20" />
+                  </button>
+                </nav>
+              </div>
+              <div class="experience-rail-bottom">
+                <button type="button" class="experience-rail-btn" aria-label="Help">
+                  <img src="assets/rail-help.svg" alt="" width="20" height="20" />
+                </button>
+                <button type="button" class="experience-rail-btn" aria-label="Settings">
+                  <img src="assets/rail-settings.svg" alt="" width="20" height="20" />
+                </button>
+                <div class="experience-rail-avatar">
+                  <img src="assets/avatar-olivia.png" alt="" width="40" height="40" />
+                  <img class="experience-rail-status" src="assets/icon-status-online.svg" alt="" width="14" height="14" />
+                </div>
+              </div>
+            </aside>
+          </div>
+
+          <div class="experience-main">
+            <header class="experience-topbar">
+              <div class="experience-title-row">
+                <div class="experience-title-copy">
+                  <h1>Review the Experience</h1>
+                  <p>Orbital identified 4 distinct audience personas from your campaigns. Review, rename, merge, or remove.</p>
+                </div>
+                <button type="button" class="btn btn-primary btn-compact" id="experience-launch">
+                  <span>Ready to Launch</span>
+                </button>
+              </div>
+              <div class="experience-tabs" id="experience-tabs" role="tablist" aria-label="Personas">
+                <button type="button" class="experience-tab is-active" role="tab" aria-selected="true" data-persona-tab="athlete">The Performance Athlete</button>
+                <button type="button" class="experience-tab" role="tab" aria-selected="false" data-persona-tab="value">The Value Savvy-Shopper</button>
+                <button type="button" class="experience-tab" role="tab" aria-selected="false" data-persona-tab="lifestyle">The Lifestyle Enthusiast</button>
+                <button type="button" class="experience-tab" role="tab" aria-selected="false" data-persona-tab="loyal">The Loyal Returner</button>
+              </div>
+            </header>
+
+            <section class="experience-body">
+              <div class="experience-view-toggle" id="experience-view-toggle" role="tablist" aria-label="View">
+                <button type="button" class="experience-view-btn is-active" data-view-mode="side-by-side">Side-by-Side</button>
+                <button type="button" class="experience-view-btn" data-view-mode="preview">Preview</button>
+              </div>
+              <div class="experience-compare" id="experience-compare"></div>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen screen-launch" data-step="launch" hidden aria-hidden="true">
+        <div class="experience-layout launch-layout">
+          <div class="experience-rail-wrap">
+            <aside class="experience-rail" aria-label="Orbital">
+              <div class="experience-rail-top">
+                <div class="experience-rail-logo">
+                  <img src="assets/logo.svg" alt="Orbital" width="24" height="24" />
+                </div>
+                <nav class="experience-rail-nav" aria-label="Primary">
+                  <button type="button" class="experience-rail-btn" aria-label="Home">
+                    <img src="assets/rail-home.svg" alt="" width="20" height="20" />
+                  </button>
+                  <button type="button" class="experience-rail-btn is-current" aria-label="Analytics" aria-current="page">
+                    <img src="assets/rail-chart.svg" alt="" width="20" height="20" />
+                  </button>
+                  <button type="button" class="experience-rail-btn" aria-label="Rows">
+                    <img src="assets/rail-rows.svg" alt="" width="20" height="20" />
+                  </button>
+                  <button type="button" class="experience-rail-btn" aria-label="Checklist">
+                    <img src="assets/rail-check.svg" alt="" width="20" height="20" />
+                  </button>
+                  <button type="button" class="experience-rail-btn" aria-label="Reports">
+                    <img src="assets/rail-pie.svg" alt="" width="20" height="20" />
+                  </button>
+                  <button type="button" class="experience-rail-btn" aria-label="People">
+                    <img src="assets/rail-users.svg" alt="" width="20" height="20" />
+                  </button>
+                </nav>
+              </div>
+              <div class="experience-rail-bottom">
+                <button type="button" class="experience-rail-btn" aria-label="Help">
+                  <img src="assets/rail-help.svg" alt="" width="20" height="20" />
+                </button>
+                <button type="button" class="experience-rail-btn" aria-label="Settings">
+                  <img src="assets/rail-settings.svg" alt="" width="20" height="20" />
+                </button>
+                <div class="experience-rail-avatar">
+                  <img src="assets/avatar-olivia.png" alt="" width="40" height="40" />
+                  <img class="experience-rail-status" src="assets/icon-status-online.svg" alt="" width="14" height="14" />
+                </div>
+              </div>
+            </aside>
+          </div>
+
+          <div class="launch-main">
+            <header class="launch-header">
+              <div class="launch-header-copy">
+                <h1>Ready to launch</h1>
+                <p>Everything is configured and approved. Here's exactly what goes live when you click Launch.</p>
+              </div>
+              <button type="button" class="btn btn-primary btn-compact launch-orbital-btn" id="launch-orbital">
+                <span class="launch-orbital-label">Launch Orbital</span>
+                <span class="launch-orbital-busy" hidden>
+                  <span class="launch-spinner" aria-hidden="true"></span>
+                  Launching...
+                </span>
+              </button>
+            </header>
+
+            <div class="launch-row">
+              <section class="launch-card launch-card--checklist">
+                <h2>Launch Checklist</h2>
+                <ol class="launch-checklist">
+                  <li class="launch-step">
+                    <div class="launch-step-rail">
+                      <span class="launch-step-dot"><img src="assets/launch-check.svg" alt="" width="10" height="8" /></span>
+                      <span class="launch-step-line" aria-hidden="true"></span>
+                    </div>
+                    <div class="launch-step-copy">
+                      <p>Data connected</p>
+                      <p>Shopify • Meta Ads</p>
+                    </div>
+                  </li>
+                  <li class="launch-step">
+                    <div class="launch-step-rail">
+                      <span class="launch-step-dot"><img src="assets/launch-check.svg" alt="" width="10" height="8" /></span>
+                      <span class="launch-step-line" aria-hidden="true"></span>
+                    </div>
+                    <div class="launch-step-copy">
+                      <p>4 personas approved</p>
+                      <p>Performance Athlete • Value Shopper • Lifestyle • Loyal Returner</p>
+                    </div>
+                  </li>
+                  <li class="launch-step">
+                    <div class="launch-step-rail">
+                      <span class="launch-step-dot"><img src="assets/launch-check.svg" alt="" width="10" height="8" /></span>
+                      <span class="launch-step-line" aria-hidden="true"></span>
+                    </div>
+                    <div class="launch-step-copy">
+                      <p>4 experiences approved</p>
+                      <p>1 per persona • Copy reviewed</p>
+                    </div>
+                  </li>
+                  <li class="launch-step">
+                    <div class="launch-step-rail">
+                      <span class="launch-step-dot"><img src="assets/launch-check.svg" alt="" width="10" height="8" /></span>
+                      <span class="launch-step-line" aria-hidden="true"></span>
+                    </div>
+                    <div class="launch-step-copy">
+                      <p>Orbital pixel installed</p>
+                      <p>acme-store.myshopify.com</p>
+                    </div>
+                  </li>
+                  <li class="launch-step">
+                    <div class="launch-step-rail">
+                      <span class="launch-step-dot"><img src="assets/launch-check.svg" alt="" width="10" height="8" /></span>
+                    </div>
+                    <div class="launch-step-copy">
+                      <p>Traffic routing configured</p>
+                      <p>Starting at 100% • adjustable after launch</p>
+                    </div>
+                  </li>
+                </ol>
+              </section>
+
+              <section class="launch-card launch-card--experiences">
+                <h2>Experiences Going Live</h2>
+                <div class="launch-exp-grid">
+                  <article class="launch-exp" data-tone="violet">
+                    <div class="launch-exp-persona">
+                      <span class="launch-exp-icon">
+                        <img src="assets/launch-icon-loyal.svg" alt="" width="16" height="16" />
+                      </span>
+                      <p>Loyal Subscriber</p>
+                    </div>
+                    <div class="launch-exp-copy">
+                      <p class="launch-exp-headline">Welcome back. New Arrivals.</p>
+                      <p class="launch-exp-sub">Custom picked out just for you.</p>
+                    </div>
+                    <div class="launch-exp-actions">
+                      <button type="button" class="launch-exp-cta" data-launch-view="Loyal Subscriber">See What's New</button>
+                      <button type="button" class="launch-exp-preview" data-launch-preview="Loyal Subscriber">Preview →</button>
+                    </div>
+                  </article>
+
+                  <article class="launch-exp" data-tone="green">
+                    <div class="launch-exp-persona">
+                      <span class="launch-exp-icon">
+                        <img src="assets/launch-icon-wellness.svg" alt="" width="16" height="16" />
+                      </span>
+                      <p>Wellness Curious</p>
+                    </div>
+                    <div class="launch-exp-copy">
+                      <p class="launch-exp-headline">Your Summer Aesthetic</p>
+                      <p class="launch-exp-sub">Increase your health stats in one go!</p>
+                    </div>
+                    <div class="launch-exp-actions">
+                      <button type="button" class="launch-exp-cta" data-launch-view="Wellness Curious">Explore the Edit</button>
+                      <button type="button" class="launch-exp-preview" data-launch-preview="Wellness Curious">Preview →</button>
+                    </div>
+                  </article>
+
+                  <article class="launch-exp" data-tone="orange">
+                    <div class="launch-exp-persona">
+                      <span class="launch-exp-icon">
+                        <img src="assets/launch-icon-deal.svg" alt="" width="16" height="16" />
+                      </span>
+                      <p>Deal Seeker</p>
+                    </div>
+                    <div class="launch-exp-copy">
+                      <p class="launch-exp-headline">40% off - Today Only</p>
+                      <p class="launch-exp-sub">Summerwide sale with 24 hours left!</p>
+                    </div>
+                    <div class="launch-exp-actions">
+                      <button type="button" class="launch-exp-cta" data-launch-view="Deal Seeker">Shope the Sale</button>
+                      <button type="button" class="launch-exp-preview" data-launch-preview="Deal Seeker">Preview →</button>
+                    </div>
+                  </article>
+
+                  <article class="launch-exp" data-tone="indigo">
+                    <div class="launch-exp-persona">
+                      <span class="launch-exp-icon">
+                        <img src="assets/launch-icon-perf.svg" alt="" width="16" height="16" />
+                      </span>
+                      <p>Performance Pro</p>
+                    </div>
+                    <div class="launch-exp-copy">
+                      <p class="launch-exp-headline">Train Smarter. Hit Your PRs.</p>
+                      <p class="launch-exp-sub">With Lorem, you'll only get better.</p>
+                    </div>
+                    <div class="launch-exp-actions">
+                      <button type="button" class="launch-exp-cta" data-launch-view="Performance Pro">View Performance Gear</button>
+                      <button type="button" class="launch-exp-preview" data-launch-preview="Performance Pro">Preview →</button>
+                    </div>
+                  </article>
+                </div>
+              </section>
+            </div>
+
+            <div class="launch-row launch-row--bottom">
+              <section class="launch-card launch-card--traffic">
+                <div class="launch-traffic-copy">
+                  <h2>Traffic Routing</h2>
+                  <p class="launch-traffic-lead">100% of traffic will be personalized</p>
+                  <p class="launch-traffic-desc">Orbital will match each visitor to the best-fit persona and serve their tailored experience. You can adjust the traffic split from your dashboard at any time.</p>
+                </div>
+                <div class="launch-chart" aria-hidden="true">
+                  <img class="launch-chart-line launch-chart-line--solid" src="assets/launch-chart-1.svg" alt="" />
+                  <img class="launch-chart-line launch-chart-line--dotted" src="assets/launch-chart-2.svg" alt="" />
+                </div>
+              </section>
+
+              <section class="launch-card launch-card--next">
+                <h2>What Happens After Launch</h2>
+                <ul class="launch-timeline">
+                  <li>
+                    <span class="launch-time is-now">Immediately</span>
+                    <p>Orbital starts routing visitors to matched experiences</p>
+                  </li>
+                  <li>
+                    <span class="launch-time">~15 minutes</span>
+                    <p>First conversion events appear in your dashboard</p>
+                  </li>
+                  <li>
+                    <span class="launch-time">24-48 hours</span>
+                    <p>Enough data to see early CVR signals per persona</p>
+                  </li>
+                  <li>
+                    <span class="launch-time">7 days</span>
+                    <p>Full performance picture with confidence intervals</p>
+                  </li>
+                </ul>
+              </section>
+            </div>
+
+            <p class="launch-disclaimer">Orbital personalizes copy and content structure only. No product prices, inventory, or core site functionality is modified.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen screen-overview" data-step="overview" hidden aria-hidden="true">
+        <div class="dashboard-layout">
+          <div class="dashboard-sidebar-wrap">
+            <aside class="dashboard-sidebar">
+              <div class="dash-nav">
+                <div class="dash-nav-header">
+                  <div class="dash-logo">
+                    <img class="dash-logomark" src="assets/logo.svg" alt="" width="24" height="24" />
+                    <img class="dash-wordmark" src="assets/wordmark-dashboard.svg" alt="Orbital" width="42" height="12" />
+                  </div>
+                  <button type="button" class="dash-search" aria-label="Search">
+                    <img src="assets/nav-search.svg" alt="" width="16" height="16" />
+                  </button>
+                </div>
+                <nav class="dash-nav-body" aria-label="Dashboard">
+                  <p class="dash-nav-label">ANALYTICS</p>
+                  <div class="dash-nav-section">
+                    <button type="button" class="dash-nav-item is-current">
+                      <img src="assets/nav-chart.svg" alt="" width="20" height="20" />
+                      <span>Executive Summary</span>
+                    </button>
+                    <button type="button" class="dash-nav-item">
+                      <img src="assets/nav-rows.svg" alt="" width="20" height="20" />
+                      <span>Persona Intelligence</span>
+                    </button>
+                    <button type="button" class="dash-nav-item">
+                      <img src="assets/nav-file.svg" alt="" width="20" height="20" />
+                      <span>Journey Attribution</span>
+                    </button>
+                    <button type="button" class="dash-nav-item">
+                      <img src="assets/nav-calendar.svg" alt="" width="20" height="20" />
+                      <span>Optimization Ops</span>
+                    </button>
+                  </div>
+                  <p class="dash-nav-label">CONFIGURATION</p>
+                  <div class="dash-nav-section">
+                    <button type="button" class="dash-nav-item">
+                      <img src="assets/nav-pie.svg" alt="" width="20" height="20" />
+                      <span>Experience Library</span>
+                    </button>
+                    <button type="button" class="dash-nav-item">
+                      <img src="assets/nav-check.svg" alt="" width="20" height="20" />
+                      <span>Ad Mapping</span>
+                      <span class="dash-nav-badge">8</span>
+                    </button>
+                    <button type="button" class="dash-nav-item">
+                      <img src="assets/nav-users.svg" alt="" width="20" height="20" />
+                      <span>Settings</span>
+                    </button>
+                  </div>
+                </nav>
+              </div>
+              <div class="dash-account">
+                <div class="dash-avatar-wrap">
+                  <img class="dash-avatar" src="assets/avatar-olivia.png" alt="" width="40" height="40" />
+                  <img class="dash-avatar-status" src="assets/icon-status-online.svg" alt="" width="14" height="14" />
+                </div>
+                <div class="dash-account-copy">
+                  <p class="dash-account-name">Olivia Rhye</p>
+                  <p class="dash-account-email">olivia@untitledui.com</p>
+                </div>
+                <img class="dash-account-chevron" src="assets/nav-chevron.svg" alt="" width="16" height="16" />
+              </div>
+            </aside>
+          </div>
+
+          <main class="dashboard-main overview-main">
+            <header class="overview-header">
+              <div>
+                <h1>Performance overview</h1>
+                <p id="overview-subtitle">Orbital vs. control · Lorem Ipsum · Jun 1–15, 2025 · 4 personas active</p>
+              </div>
+              <span class="overview-live">
+                <img src="assets/dot-live-green.svg" alt="" width="8" height="8" />
+                Live • 4 Personas
+              </span>
+            </header>
+
+            <section class="overview-section">
+              <div class="overview-sec-head">
+                <span class="overview-num is-01">01</span>
+                <h2>Executive summary</h2>
+              </div>
+              <div class="overview-kpis">
+                <article class="overview-kpi">
+                  <div class="overview-kpi-top">
+                    <p>CVR lift</p>
+                    <span class="overview-pill is-frost">↑ significant</span>
+                  </div>
+                  <p class="overview-kpi-value">+18.4%</p>
+                  <div class="overview-kpi-bot">
+                    <p>Orbital vs control</p>
+                    <img src="assets/ov-spark-cvr.svg" alt="" width="56" height="24" />
+                  </div>
+                </article>
+                <article class="overview-kpi">
+                  <div class="overview-kpi-top">
+                    <p>Incremental GMV</p>
+                    <span class="overview-pill is-blue">30-day window</span>
+                  </div>
+                  <p class="overview-kpi-value">$124.8k</p>
+                  <div class="overview-kpi-bot">
+                    <p>Attributed to personalization</p>
+                    <img src="assets/ov-spark-gmv.svg" alt="" width="56" height="24" />
+                  </div>
+                </article>
+                <article class="overview-kpi">
+                  <div class="overview-kpi-top">
+                    <p>Implied CAC</p>
+                    <span class="overview-pill is-violet">↓ improved</span>
+                  </div>
+                  <p class="overview-kpi-value">−$4.20</p>
+                  <div class="overview-kpi-bot">
+                    <p>vs control baseline</p>
+                    <img src="assets/ov-spark-cac.svg" alt="" width="56" height="24" />
+                  </div>
+                </article>
+                <article class="overview-kpi">
+                  <div class="overview-kpi-top">
+                    <p>Implied ROAS</p>
+                    <span class="overview-pill is-amber">+1.7× lift</span>
+                  </div>
+                  <p class="overview-kpi-value">3.8×</p>
+                  <div class="overview-kpi-bot">
+                    <p>Up from 2.1× control</p>
+                    <img src="assets/ov-spark-roas.svg" alt="" width="56" height="24" />
+                  </div>
+                </article>
+              </div>
+
+              <article class="overview-card overview-week">
+                <div class="overview-card-head">
+                  <div>
+                    <h3>CVR by week — Orbital vs control</h3>
+                    <p>Grouped bars · 4-week window · Orbital consistently outperforms</p>
+                  </div>
+                  <div class="overview-legend">
+                    <span><i class="overview-swatch is-orbital"></i> Orbital</span>
+                    <span><i class="overview-swatch is-control"></i> Control</span>
+                  </div>
+                </div>
+                <div class="overview-bars" id="overview-bars">
+                  <div class="overview-bars-y">
+                    <span>9%</span><span>6%</span><span>3%</span><span>0%</span>
+                  </div>
+                  <div class="overview-bars-plot">
+                    <div class="overview-bars-grid" aria-hidden="true"></div>
+                    <div class="overview-bars-group">
+                      <div class="overview-bar is-orbital" style="--h:53%" data-bar-label="4.8%"></div>
+                      <div class="overview-bar is-control" style="--h:37%" data-bar-label="3.3%"></div>
+                      <span>Week 1</span>
+                    </div>
+                    <div class="overview-bars-group">
+                      <div class="overview-bar is-orbital" style="--h:60%" data-bar-label="5.4%"></div>
+                      <div class="overview-bar is-control" style="--h:39%" data-bar-label="3.5%"></div>
+                      <span>Week 2</span>
+                    </div>
+                    <div class="overview-bars-group">
+                      <div class="overview-bar is-orbital" style="--h:72%" data-bar-label="6.5%"></div>
+                      <div class="overview-bar is-control" style="--h:42%" data-bar-label="3.8%"></div>
+                      <span>Week 3</span>
+                    </div>
+                    <div class="overview-bars-group is-muted">
+                      <div class="overview-bar is-orbital" style="--h:86%" data-bar-label="7.7%"></div>
+                      <div class="overview-bar is-control" style="--h:44%" data-bar-label="4.0%"></div>
+                      <span>Week 4</span>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </section>
+
+            <section class="overview-section">
+              <div class="overview-sec-head">
+                <span class="overview-num is-02">02</span>
+                <h2>Persona intelligence</h2>
+                <p>Who is driving growth?</p>
+              </div>
+              <div class="overview-split">
+                <article class="overview-card overview-bubble-card">
+                  <h3>Traffic vs revenue share by persona</h3>
+                  <p>Bubble size = LTV:CAC ratio. Above diagonal = over-indexed on revenue.</p>
+                  <div class="overview-bubble-plot" id="overview-bubbles">
+                    <span class="overview-axis-y">Rev%</span>
+                    <span class="overview-tick" style="top:8%">60</span>
+                    <span class="overview-tick" style="top:32%">40</span>
+                    <span class="overview-tick" style="top:56%">20</span>
+                    <span class="overview-tick" style="top:80%">0</span>
+                    <span class="overview-axis-x">Traffic share (%)</span>
+                    <button type="button" class="overview-bubble is-deal" data-bubble="Deal Seeker" title="Deal Seeker · 28% traffic · 42% rev · 4.2× LTV:CAC">
+                      <strong>Deal Seeker</strong>
+                      <span>4.2× LTV:CAC</span>
+                    </button>
+                    <button type="button" class="overview-bubble is-loyal" data-bubble="Loyal Subscriber" title="Loyal Subscriber · 18% traffic · 38% rev · 5.1× LTV:CAC">
+                      <strong>Loyal Subscriber</strong>
+                      <span>5.1× LTV:CAC</span>
+                    </button>
+                    <button type="button" class="overview-bubble is-perf" data-bubble="Performance Pro" title="Performance Pro · 32% traffic · 22% rev · 3.1× LTV:CAC">
+                      <strong>Perf Pro</strong>
+                      <span>3.1×</span>
+                    </button>
+                    <button type="button" class="overview-bubble is-well" data-bubble="Wellness Curious" title="Wellness Curious · 22% traffic · 8% rev · 1.8× LTV:CAC">
+                      <strong>Wellness</strong>
+                      <span>1.8×</span>
+                    </button>
+                  </div>
+                </article>
+                <article class="overview-card overview-cvr-card">
+                  <h3>CVR by persona</h3>
+                  <p>Orbital experience · sorted by performance</p>
+                  <div class="overview-cvr-row"><span>Deal Seeker</span><strong>74%</strong><div class="overview-cvr-track"><i style="width:74%;background:#2563eb"></i></div></div>
+                  <div class="overview-cvr-row"><span>Loyal Subscriber</span><strong>61%</strong><div class="overview-cvr-track"><i style="width:61%;background:#f59e0b"></i></div></div>
+                  <div class="overview-cvr-row"><span>Performance Pro</span><strong>48%</strong><div class="overview-cvr-track"><i style="width:48%;background:#7c3aed"></i></div></div>
+                  <div class="overview-cvr-row"><span>Wellness Curious</span><strong>31%</strong><div class="overview-cvr-track"><i style="width:31%;background:#22c55e"></i></div></div>
+                  <hr class="overview-divider" />
+                  <p class="overview-mini-label">1st → 2nd purchase rate</p>
+                  <div class="overview-dot-row"><i class="is-deal"></i><span>Deal Seeker</span><strong>38%</strong></div>
+                  <div class="overview-dot-row"><i class="is-loyal"></i><span>Loyal Subscriber</span><strong>51%</strong></div>
+                  <div class="overview-dot-row"><i class="is-perf"></i><span>Performance Pro</span><strong>29%</strong></div>
+                </article>
+              </div>
+            </section>
+
+            <section class="overview-section">
+              <div class="overview-sec-head">
+                <span class="overview-num is-03">03</span>
+                <h2>Journey attribution</h2>
+                <p>Ad → Persona → Experience → Conversion</p>
+              </div>
+              <div class="overview-split">
+                <article class="overview-card overview-sankey-card">
+                  <h3>Ad hook → persona → CVR outcome</h3>
+                  <p>Flow width = traffic volume · color = persona match</p>
+                  <div class="overview-sankey-labels"><span>AD HOOK</span><span>PERSONA</span><span>CVR</span></div>
+                  <div class="overview-sankey">
+                    <div class="overview-flow is-deal" style="--w:34">
+                      <div class="overview-flow-box"><strong>50% off bundle</strong><span>34% traffic</span></div>
+                      <div class="overview-flow-band"></div>
+                      <div class="overview-flow-box"><strong>Deal Seeker</strong><span>34%</span></div>
+                      <div class="overview-flow-band"></div>
+                      <div class="overview-flow-out"><strong>7.4% CVR</strong><span>+18.4% vs ctrl</span></div>
+                    </div>
+                    <div class="overview-flow is-loyal" style="--w:26">
+                      <div class="overview-flow-box"><strong>Loyalty perks</strong><span>26% traffic</span></div>
+                      <div class="overview-flow-band"></div>
+                      <div class="overview-flow-box"><strong>Loyal Subscriber</strong><span>26%</span></div>
+                      <div class="overview-flow-band"></div>
+                      <div class="overview-flow-out"><strong>8.1% CVR</strong><span>+24.6% vs ctrl</span></div>
+                    </div>
+                    <div class="overview-flow is-perf" style="--w:22">
+                      <div class="overview-flow-box"><strong>Science results</strong><span>22% traffic</span></div>
+                      <div class="overview-flow-band"></div>
+                      <div class="overview-flow-box"><strong>Performance Pro</strong><span>22%</span></div>
+                      <div class="overview-flow-band"></div>
+                      <div class="overview-flow-out"><strong>5.1% CVR</strong><span>+9.2% vs ctrl</span></div>
+                    </div>
+                    <div class="overview-flow is-well" style="--w:18">
+                      <div class="overview-flow-box"><strong>Wellness journey</strong><span>18% traffic</span></div>
+                      <div class="overview-flow-band"></div>
+                      <div class="overview-flow-box"><strong>Wellness Curious</strong><span>18%</span></div>
+                      <div class="overview-flow-band"></div>
+                      <div class="overview-flow-out"><strong>3.2% CVR</strong><span>+1.1% vs ctrl</span></div>
+                    </div>
+                  </div>
+                </article>
+                <article class="overview-card overview-heat-card">
+                  <h3>Module engagement heatmap</h3>
+                  <p>Scroll depth + click rate by persona</p>
+                  <div class="overview-heat" id="overview-heat">
+                    <div class="overview-heat-row is-head">
+                      <span></span><span>Deal S.</span><span>Perf P.</span><span>Wellness</span><span>Loyal S.</span>
+                    </div>
+                    <div class="overview-heat-row">
+                      <span>Hero</span>
+                      <button type="button" class="overview-heat-cell lv-5" data-heat="Hero · Deal Seeker" title="Hero · Deal Seeker · 91%">91%</button>
+                      <button type="button" class="overview-heat-cell lv-4" data-heat="Hero · Performance Pro" title="Hero · Performance Pro · 72%">72%</button>
+                      <button type="button" class="overview-heat-cell lv-2" data-heat="Hero · Wellness Curious" title="Hero · Wellness Curious · 58%">58%</button>
+                      <button type="button" class="overview-heat-cell lv-1" data-heat="Hero · Loyal Subscriber" title="Hero · Loyal Subscriber · 44%">44%</button>
+                    </div>
+                    <div class="overview-heat-row">
+                      <span>Urgency block</span>
+                      <button type="button" class="overview-heat-cell lv-5" data-heat="Urgency block · Deal Seeker" title="Urgency block · Deal Seeker · 88%">88%</button>
+                      <button type="button" class="overview-heat-cell lv-1" data-heat="Urgency block · Performance Pro" title="Urgency block · Performance Pro · 29%">29%</button>
+                      <button type="button" class="overview-heat-cell lv-1" data-heat="Urgency block · Wellness Curious" title="Urgency block · Wellness Curious · 21%">21%</button>
+                      <button type="button" class="overview-heat-cell lv-1" data-heat="Urgency block · Loyal Subscriber" title="Urgency block · Loyal Subscriber · 23%">23%</button>
+                    </div>
+                    <div class="overview-heat-row">
+                      <span>Social proof</span>
+                      <button type="button" class="overview-heat-cell lv-4" data-heat="Social proof · Deal Seeker" title="Social proof · Deal Seeker · 76%">76%</button>
+                      <button type="button" class="overview-heat-cell lv-4" data-heat="Social proof · Performance Pro" title="Social proof · Performance Pro · 65%">65%</button>
+                      <button type="button" class="overview-heat-cell lv-5" data-heat="Social proof · Wellness Curious" title="Social proof · Wellness Curious · 89%">89%</button>
+                      <button type="button" class="overview-heat-cell lv-5" data-heat="Social proof · Loyal Subscriber" title="Social proof · Loyal Subscriber · 81%">81%</button>
+                    </div>
+                    <div class="overview-heat-row">
+                      <span>Product grid</span>
+                      <button type="button" class="overview-heat-cell lv-2" data-heat="Product grid · Deal Seeker" title="Product grid · Deal Seeker · 54%">54%</button>
+                      <button type="button" class="overview-heat-cell lv-5" data-heat="Product grid · Performance Pro" title="Product grid · Performance Pro · 83%">83%</button>
+                      <button type="button" class="overview-heat-cell lv-4" data-heat="Product grid · Wellness Curious" title="Product grid · Wellness Curious · 71%">71%</button>
+                      <button type="button" class="overview-heat-cell lv-2" data-heat="Product grid · Loyal Subscriber" title="Product grid · Loyal Subscriber · 62%">62%</button>
+                    </div>
+                    <div class="overview-heat-row">
+                      <span>CTA</span>
+                      <button type="button" class="overview-heat-cell lv-4" data-heat="CTA · Deal Seeker" title="CTA · Deal Seeker · 68%">68%</button>
+                      <button type="button" class="overview-heat-cell lv-2" data-heat="CTA · Performance Pro" title="CTA · Performance Pro · 61%">61%</button>
+                      <button type="button" class="overview-heat-cell lv-1" data-heat="CTA · Wellness Curious" title="CTA · Wellness Curious · 38%">38%</button>
+                      <button type="button" class="overview-heat-cell lv-2" data-heat="CTA · Loyal Subscriber" title="CTA · Loyal Subscriber · 57%">57%</button>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </section>
+
+            <section class="overview-section">
+              <div class="overview-sec-head">
+                <span class="overview-num is-04">04</span>
+                <h2>Optimization opportunities</h2>
+                <p>AI-detected gaps with estimated impact</p>
+              </div>
+              <div class="overview-recs" id="overview-recs">
+                <article class="overview-rec is-well" data-rec-id="wellness">
+                  <div class="overview-rec-top">
+                    <span class="overview-rec-arrow" aria-hidden="true">→</span>
+                    <span class="overview-rec-pill">Wellness Curious</span>
+                  </div>
+                  <h3>Low module engagement — ingredient transparency missing</h3>
+                  <p>Add ingredient transparency module at slot 2. Wellness personas disengage without science validation early.</p>
+                  <div class="overview-rec-stats">
+                    <span class="is-lift">Est. +3.1% CVR</span>
+                    <span>87% confidence</span>
+                  </div>
+                  <button type="button" class="overview-rec-btn" data-apply-rec="wellness">Apply recommendation →</button>
+                </article>
+                <article class="overview-rec is-perf" data-rec-id="performance">
+                  <div class="overview-rec-top">
+                    <span class="overview-rec-arrow" aria-hidden="true">→</span>
+                    <span class="overview-rec-pill">Performance Pro</span>
+                  </div>
+                  <h3>Urgency block absent — high-intent segment going unconverted</h3>
+                  <p>Test countdown + social proof at hero level. Converts on urgency + credibility, not discount framing.</p>
+                  <div class="overview-rec-stats">
+                    <span class="is-lift">Est. +2.4% CVR</span>
+                    <span>92% confidence</span>
+                  </div>
+                  <button type="button" class="overview-rec-btn" data-apply-rec="performance">Apply recommendation →</button>
+                </article>
+                <article class="overview-rec is-deal" data-rec-id="deal">
+                  <div class="overview-rec-top">
+                    <span class="overview-rec-arrow" aria-hidden="true">→</span>
+                    <span class="overview-rec-pill">Deal Seeker</span>
+                  </div>
+                  <h3>CTA underperforms on mobile — form friction killing conversions</h3>
+                  <p>Swap multi-step checkout for single-click bundle CTA on mobile. Every extra tap loses 8–12%.</p>
+                  <div class="overview-rec-stats">
+                    <span class="is-lift">Est. +1.8% CVR</span>
+                    <span>74% confidence</span>
+                  </div>
+                  <button type="button" class="overview-rec-btn" data-apply-rec="deal">Apply recommendation →</button>
+                </article>
+              </div>
+            </section>
+          </main>
+        </div>
+      </section>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+    <script src="script.js"></script>
+  </body>
+</html>
